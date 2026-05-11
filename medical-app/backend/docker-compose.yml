@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: diu-medical-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: diu_medical
+      POSTGRES_PASSWORD: diu_medical_dev_pwd
+      POSTGRES_DB: diu_medical
+    ports:
+      - "5432:5432"
+    volumes:
+      - diu_medical_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U diu_medical -d diu_medical"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  diu_medical_pgdata:

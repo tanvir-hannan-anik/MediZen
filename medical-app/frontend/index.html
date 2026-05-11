@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ── Primary SEO ─────────────────────────────────────────── -->
+    <title>MediZen – AI Health Assistant</title>
+    <meta name="title" content="MediZen – AI Health Assistant" />
+    <meta name="description" content="MediZen is an AI-powered health assistant. Get disease insights, analyze prescriptions and lab reports, find nearby clinics, search medicines, and connect with blood donors in Bangladesh." />
+    <meta name="keywords" content="MediZen, AI health assistant, medical advice, disease insight, medicine store, blood donor, nearby clinic, prescription analysis, lab report, Bangladesh health, medical AI" />
+    <meta name="author" content="MediZen" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#2563EB" />
+    <meta name="application-name" content="MediZen" />
+
+    <!-- ── Open Graph / Facebook ──────────────────────────────── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MediZen – AI Health Assistant" />
+    <meta property="og:description" content="Your AI-powered health companion for medical advice, disease insights, medicine information, and nearby healthcare services in Bangladesh." />
+    <meta property="og:site_name" content="MediZen" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ── Twitter Card ───────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MediZen – AI Health Assistant" />
+    <meta name="twitter:description" content="AI-powered health assistant for disease insights, prescriptions, medicine search, blood donor network, and nearby clinics." />
+
+    <!-- ── Structured Data ────────────────────────────────────── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MediZen",
+      "description": "AI-powered health assistant offering disease insights, prescription analysis, medicine search, blood donor network, and nearby clinic finder.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <!-- ── Icons ──────────────────────────────────────────────── -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- ── Fonts ──────────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- ── Tailwind CSS (CDN) ─────────────────────────────────── -->
+    <script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        corePlugins: { preflight: false },
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f2f3ff",
+              "surface-container-highest": "#e1e2ee",
+              "surface-dim": "#d8d9e5",
+              "primary-fixed": "#dae2ff",
+              "secondary-fixed": "#dbe4ed",
+              "inverse-primary": "#b1c5ff",
+              "on-surface-variant": "#424655",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#ffffff",
+              "secondary": "#575f67",
+              "tertiary-fixed-dim": "#ffb599",
+              "primary-fixed-dim": "#b1c5ff",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "outline": "#727787",
+              "inverse-surface": "#2d3039",
+              "tertiary-fixed": "#ffdbce",
+              "on-error": "#ffffff",
+              "surface-bright": "#faf8ff",
+              "background": "#faf8ff",
+              "on-tertiary-fixed-variant": "#7f2b00",
+              "inverse-on-surface": "#eff0fc",
+              "on-secondary-container": "#5b646b",
+              "on-tertiary-container": "#ffffff",
+              "on-secondary-fixed": "#141d23",
+              "on-secondary-fixed-variant": "#3f484f",
+              "surface-container": "#ecedf9",
+              "tertiary-container": "#cf4b00",
+              "on-primary-fixed-variant": "#00419e",
+              "on-tertiary-fixed": "#370e00",
+              "error-container": "#ffdad6",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#0057ce",
+              "on-primary-fixed": "#001946",
+              "secondary-fixed-dim": "#bfc8d0",
+              "surface-container-lowest": "#ffffff",
+              "surface-variant": "#e1e2ee",
+              "secondary-container": "#d8e1ea",
+              "primary": "#0057cd",
+              "on-background": "#191b24",
+              "surface-container-high": "#e6e7f3",
+              "tertiary": "#a63b00",
+              "outline-variant": "#c2c6d8",
+              "on-surface": "#191b24",
+              "primary-container": "#0d6efd",
+              "on-error-container": "#93000a",
+              "surface": "#faf8ff"
+            },
+            spacing: {
+              "xs": "4px", "xl": "40px", "sm": "8px", "md": "16px",
+              "unit": "4px", "lg": "24px"
+            },
+            fontFamily: {
+              sans:       ["Poppins", "sans-serif"],
+              "body-lg":  ["Poppins", "sans-serif"],
+              "body-md":  ["Poppins", "sans-serif"],
+              "body-sm":  ["Poppins", "sans-serif"],
+              "label-sm": ["Poppins", "sans-serif"],
+              "caption":  ["Poppins", "sans-serif"],
+              "h1":       ["Poppins", "sans-serif"],
+              "h2":       ["Poppins", "sans-serif"],
+              "h3":       ["Poppins", "sans-serif"],
+              "manrope":  ["Poppins", "sans-serif"],
+              "inter":    ["Poppins", "sans-serif"],
+            },
+            fontSize: {
+              "label-caps": ["12px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "700" }],
+              "body-lg":    ["16px", { lineHeight: "1.6", letterSpacing: "0",      fontWeight: "400" }],
+              "h3":         ["20px", { lineHeight: "1.4", letterSpacing: "0",      fontWeight: "600" }],
+              "nav-link":   ["15px", { lineHeight: "1.5", letterSpacing: "0",      fontWeight: "500" }],
+              "h1":         ["32px", { lineHeight: "1.2", letterSpacing: "-0.02em",fontWeight: "700" }],
+              "h2":         ["24px", { lineHeight: "1.3", letterSpacing: "-0.01em",fontWeight: "700" }],
+              "body-sm":    ["14px", { lineHeight: "1.5", letterSpacing: "0",      fontWeight: "400" }]
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- ── Initial loader styles (before React mounts) ───────── -->
+    <style>
+      #app-initial-loader {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #EFF6FF 0%, #ECFDF5 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        font-family: 'Poppins', system-ui, sans-serif;
+        transition: opacity 0.35s ease;
+      }
+      #app-initial-loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .ail-icon {
+        width: 72px;
+        height: 72px;
+        border-radius: 22px;
+        background: linear-gradient(135deg, #2563EB, #1D4ED8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+        box-shadow: 0 0 0 10px rgba(37,99,235,0.12), 0 8px 32px rgba(37,99,235,0.28);
+        animation: ail-float 2.8s ease-in-out infinite;
+      }
+      .ail-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #0A1628;
+        letter-spacing: -0.025em;
+        margin-bottom: 6px;
+      }
+      .ail-sub {
+        font-size: 13px;
+        color: #5E7187;
+        margin-bottom: 28px;
+      }
+      .ail-spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid #DBEAFE;
+        border-top-color: #2563EB;
+        border-radius: 50%;
+        animation: ail-spin 0.7s linear infinite;
+      }
+      @keyframes ail-spin  { to { transform: rotate(360deg); } }
+      @keyframes ail-float {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50%      { transform: translateY(-8px) scale(1.02); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── Initial loading screen (shown before React hydrates) ── -->
+    <div id="app-initial-loader" aria-hidden="true">
+      <div class="ail-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v18M3 12h18"/>
+          <circle cx="12" cy="12" r="9"/>
+        </svg>
+      </div>
+      <div class="ail-title">MediZen</div>
+      <div class="ail-sub">Loading your health assistant&hellip;</div>
+      <div class="ail-spinner"></div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
