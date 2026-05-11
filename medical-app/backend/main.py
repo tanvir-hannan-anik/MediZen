@@ -17,13 +17,11 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 
 
 def seed_medicines():
-    import json
+    import csv, json
     from models.models import Medicine
 
-    medicines_file = os.path.join(DATA_DIR, "medicines.json")
-    if not os.path.isfile(medicines_file):
-        print("[seed] medicines.json not found, skipping medicine import")
-        return
+    json_file = os.path.join(DATA_DIR, "medicines.json")
+    csv_file  = os.path.join(DATA_DIR, "medicines.csv")
 
     db = SessionLocal()
     try:
@@ -31,9 +29,17 @@ def seed_medicines():
             print(f"[seed] Medicines already seeded ({db.query(Medicine).count()} rows), skipping")
             return
 
-        print("[seed] Loading medicines from medicines.json …")
-        with open(medicines_file, encoding="utf-8") as f:
-            data = json.load(f)
+        if os.path.isfile(json_file):
+            print("[seed] Loading medicines from medicines.json …")
+            with open(json_file, encoding="utf-8") as f:
+                data = json.load(f)
+        elif os.path.isfile(csv_file):
+            print("[seed] Loading medicines from medicines.csv …")
+            with open(csv_file, encoding="utf-8", newline="") as f:
+                data = list(csv.DictReader(f))
+        else:
+            print("[seed] No medicines.json or medicines.csv found, skipping medicine import")
+            return
 
         batch_size = 500
         for i in range(0, len(data), batch_size):
@@ -82,9 +88,12 @@ async def global_exception_handler(request: Request, exc: Exception):
     return JSONResponse(status_code=500, content={"detail": str(exc), "traceback": tb})
 
 
+_default_origins = "http://localhost:5173,http://localhost:3000,http://localhost:8001"
+_origins = [o.strip() for o in os.getenv("CORS_ORIGINS", _default_origins).split(",") if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000", "http://localhost:8001"],
+    allow_origins=_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

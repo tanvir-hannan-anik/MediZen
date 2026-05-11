@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api' });
+// In dev, leave baseURL relative so Vite's proxy in vite.config.js handles it.
+// In prod, set VITE_API_URL to your backend origin (e.g. https://medizen-api.onrender.com).
+const API_BASE = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api';
+const api = axios.create({ baseURL: API_BASE });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
